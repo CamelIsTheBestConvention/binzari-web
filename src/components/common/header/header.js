@@ -11,7 +11,7 @@ const Header = () => {
         <HomeIcon />
         <MainLogo />
         <ProfileIcon />
-        <FixedDummy />
+        {/* <FixedDummy /> */}
       </HeaderWrap>
     </>
   );
@@ -20,6 +20,7 @@ export default Header;
 
 const HeaderWrap = styled.div`
   width: 100%;
+  max-width: 800px;
   padding: 15px 0;
   display: flex;
   background-color: #fff;

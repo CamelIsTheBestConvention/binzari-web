@@ -7,7 +7,7 @@ const FooterLeftPhone = () => {
       <PhoneWrapper>
         <CallCenter>고객센터</CallCenter>
         <PhoneNumber>
-          <img src={callIcon} style={{ marginRight: "-3px" }} />
+          <PhoneImg src={callIcon} />
           <span>1600-0099</span>
         </PhoneNumber>
       </PhoneWrapper>
@@ -35,4 +35,9 @@ const PhoneNumber = styled.div`
   border-radius: 15px;
   padding: 0 4px;
   margin-left: 4px;
+`;
+
+const PhoneImg = styled.img`
+  width: 8px;
+  margin-right: 2px;
 `;
