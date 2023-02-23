@@ -1,24 +1,17 @@
-import styled from "styled-components";
-import "./App.css";
-import Footer from "./components/common/footer/footer";
-import Header from "./components/common/header/header";
-import Join from "./components/joinContent/join";
+import styled, { ThemeProvider } from "styled-components";
+import Routing from "./routes/Routing";
+import GlobalStyles from "./styles/global";
+import { theme } from "./styles/theme";
 
 function App() {
   return (
     <>
-      <TotalWrapper>
-        <Header />
-        <Join />
-        <Footer />
-      </TotalWrapper>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Routing />
+      </ThemeProvider>
     </>
   );
 }
 
 export default App;
-
-const TotalWrapper = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-`;

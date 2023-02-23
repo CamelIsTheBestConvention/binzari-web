@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Eye from "../../images/joinImages/view.png";
 
-const PwInput = () => {
+const PwInputCheck = () => {
   return (
     <>
       <PwInputWrapper>
@@ -11,7 +11,7 @@ const PwInput = () => {
     </>
   );
 };
-export default PwInput;
+export default PwInputCheck;
 
 const PwInputWrapper = styled.article`
   position: relative;

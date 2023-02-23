@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-const PwTitle = () => {
+const PwTitleCheck = () => {
   return (
     <>
-      <PwTitleWrapper>비밀번호</PwTitleWrapper>
+      <PwTitleWrapper>비밀번호 확인</PwTitleWrapper>
     </>
   );
 };
-export default PwTitle;
+export default PwTitleCheck;
 
 const PwTitleWrapper = styled.article`
   font-size: 0.9rem;

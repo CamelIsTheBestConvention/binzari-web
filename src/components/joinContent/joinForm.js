@@ -2,7 +2,9 @@ import styled from "styled-components";
 import EmailInput from "./emailInput";
 import EmailTitle from "./emailTitle";
 import PwInput from "./pwInput";
+import PwInputCheck from "./pwInputCheck";
 import PwTitle from "./pwTitle";
+import PwTitleCheck from "./pwTitleCheck";
 import TypeChoice from "./typeChoice";
 import TypeTitle from "./typeTitle";
 
@@ -23,8 +25,8 @@ const JoinForm = () => {
           <PwInput />
         </PwWrapper>
         <PwWrapper>
-          <PwTitle />
-          <PwInput />
+          <PwTitleCheck />
+          <PwInputCheck />
         </PwWrapper>
       </form>
     </>

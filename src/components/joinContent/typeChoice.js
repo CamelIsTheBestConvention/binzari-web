@@ -1,39 +1,53 @@
 import styled from "styled-components";
 import Check from "../../images/joinImages/check.png";
+import React, { useState } from "react";
+
+// const [radioCheck, setRadioCheck] = useState("일반");
+// 
+// const handlerClickRadioBtn = (e) => {
+//   console.log(e.target.value);
+//   setRadioCheck(e.target.value);
+// };
 
 const TypeChoice = () => {
   return (
     <>
       <TypeChoiceWrapper>
         <TypeNormal>
-          <input
+          <Input
             id="normal"
             type="radio"
             name="id-type-radio"
             value="일반"
-            checked="checked"
             style={{ display: "none" }}
+            // checked={radioCheck === "일반"}
+            // onChange={handlerClickRadioBtn}
           />
           <label for="normal">일반</label>
           <img src={Check} style={{ width: "15px", height: "15px" }} />
         </TypeNormal>
         <TypeMaster>
-          <input
+          <Input
             id="master"
             type="radio"
             name="id-type-radio"
             value="사업자"
             style={{ display: "none" }}
+            // checked={radioCheck === "사업자"}
+            // onChange={handlerClickRadioBtn}
           />
           <label for="master">사업자</label>
         </TypeMaster>
         <TypeLaw>
-          <input
+          <Input
             id="law"
             type="radio"
             name="id-type-radio"
             value="법인"
             style={{ display: "none" }}
+            // checked={radioCheck === "법인"}
+            
+            
           />
           <label for="law">법인</label>
         </TypeLaw>
@@ -89,6 +103,13 @@ const TypeLaw = styled.article`
   cursor: pointer;
 
   :hover {
+    border-bottom: 2px solid #5ec48d;
+    color: #5ec48d;
+  }
+`;
+
+const Input = styled.input`
+  :checked {
     border-bottom: 2px solid #5ec48d;
     color: #5ec48d;
   }
