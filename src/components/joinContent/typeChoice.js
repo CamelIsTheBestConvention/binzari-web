@@ -2,58 +2,61 @@ import styled from "styled-components";
 import Check from "../../images/joinImages/check.png";
 import React, { useState } from "react";
 
-// const [radioCheck, setRadioCheck] = useState("일반");
-// 
-// const handlerClickRadioBtn = (e) => {
-//   console.log(e.target.value);
-//   setRadioCheck(e.target.value);
-// };
-
 const TypeChoice = () => {
+  const [radioCheck, setRadioCheck] = useState("일반");
+
+  const handlerClickRadioBtn = (e) => {
+    console.log(e.target.value);
+    setRadioCheck(e.target.value);
+    TypeWrapper.style.setProperty();
+  };
+
   return (
     <>
       <TypeChoiceWrapper>
-        <TypeNormal>
+        <TypeWrapper>
           <Input
             id="normal"
             type="radio"
             name="id-type-radio"
             value="일반"
             style={{ display: "none" }}
-            // checked={radioCheck === "일반"}
-            // onChange={handlerClickRadioBtn}
+            checked={radioCheck === "일반"}
+            onChange={handlerClickRadioBtn}
           />
-          <label for="normal">일반</label>
+          <Label for="normal">일반</Label>
           <img src={Check} style={{ width: "15px", height: "15px" }} />
-        </TypeNormal>
-        <TypeMaster>
+        </TypeWrapper>
+        <TypeWrapper>
           <Input
             id="master"
             type="radio"
             name="id-type-radio"
             value="사업자"
             style={{ display: "none" }}
-            // checked={radioCheck === "사업자"}
-            // onChange={handlerClickRadioBtn}
+            checked={radioCheck === "사업자"}
+            onChange={handlerClickRadioBtn}
           />
-          <label for="master">사업자</label>
-        </TypeMaster>
-        <TypeLaw>
+          <Label for="master">사업자</Label>
+        </TypeWrapper>
+        <TypeWrapper>
           <Input
             id="law"
             type="radio"
             name="id-type-radio"
             value="법인"
             style={{ display: "none" }}
-            // checked={radioCheck === "법인"}
-            
-            
+            checked={radioCheck === "법인"}
+            onChange={handlerClickRadioBtn}
           />
-          <label for="law">법인</label>
-        </TypeLaw>
+          <Label for="law" style={{ cursor: "pointer" }}>
+            법인
+          </Label>
+        </TypeWrapper>
       </TypeChoiceWrapper>
     </>
   );
+  console.log(Input.value);
 };
 export default TypeChoice;
 
@@ -63,7 +66,7 @@ const TypeChoiceWrapper = styled.article`
   font-size: 0.8rem;
 `;
 
-const TypeNormal = styled.article`
+const TypeWrapper = styled.article`
   width: 30%;
   padding-bottom: 3px;
   margin-right: 5%;
@@ -81,36 +84,13 @@ const TypeNormal = styled.article`
   /* 호버 넣어야대고 체크된거 js로 뺴야함 */
 `;
 
-const TypeMaster = styled.article`
-  width: 30%;
-  margin-right: 5%;
-  padding-bottom: 3px;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-
-  :hover {
-    border-bottom: 2px solid #5ec48d;
-    color: #5ec48d;
-  }
-`;
-
-const TypeLaw = styled.article`
-  width: 30%;
-  padding-bottom: 3px;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-
-  :hover {
-    border-bottom: 2px solid #5ec48d;
-    color: #5ec48d;
-  }
-`;
-
 const Input = styled.input`
   :checked {
     border-bottom: 2px solid #5ec48d;
     color: #5ec48d;
   }
+`;
+
+const Label = styled.label`
+  cursor: pointer;
 `;

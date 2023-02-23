@@ -27,4 +27,5 @@ const TotalWrapper = styled.div`
   // height: 100%;
   // min-height: 900px;
   margin: 0 auto;
+  font-weight: 700;
 `;
