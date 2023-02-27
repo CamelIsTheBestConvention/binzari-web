@@ -11,8 +11,8 @@ const Header = () => {
         <HomeIcon />
         <MainLogo />
         <ProfileIcon />
-        {/* <FixedDummy /> */}
       </HeaderWrap>
+      <FixedDummy />
     </>
   );
 };
