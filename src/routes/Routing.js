@@ -5,6 +5,7 @@ import Footer from "../components/common/footer/footer";
 import styled from "styled-components";
 import Login from "../pages/login";
 import MyPage from "../pages/myPage";
+import Home from "../pages/home";
 
 function Routing() {
   return (
@@ -12,6 +13,7 @@ function Routing() {
       <Header />
       <BrowserRouter>
         <Routes>
+          <Route path="/home" element={<Home />} />
           <Route path="/join" element={<Join />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<MyPage />} />
