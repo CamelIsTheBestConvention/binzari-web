@@ -131,11 +131,12 @@ const LeisureContentTableTdDiv = styled.div`
 const LeisureContentTableTdDivImg = styled.img`
   width: 40px;
   margin-top: 15px;
+  margin-bottom: -29px;
 `;
 
 const NotService = styled.p`
   margin-top: 10px;
-  padding-top: 8px;
+  padding-top: 15px;
 `;
 
 const LeisureContentTableName = styled.tr`

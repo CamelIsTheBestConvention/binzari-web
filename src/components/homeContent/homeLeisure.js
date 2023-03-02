@@ -15,6 +15,6 @@ const HomeLeisure = () => {
 export default HomeLeisure;
 
 const HomeLeisureWrapper = styled.section`
-  margin: 120px auto 0 auto;
-  max-width: 800px;
+  margin: 80px auto 40px auto;
+  max-width: 600px;
 `;

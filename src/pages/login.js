@@ -35,5 +35,5 @@ const LoginMain = styled.main`
 
 const LoginWrapper = styled.section`
   width: 100%;
-  padding-top: 70px;
+  padding-top: 30px;
 `;

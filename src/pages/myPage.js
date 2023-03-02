@@ -25,5 +25,5 @@ const MyPageMain = styled.main`
 
 const MyPageWrapper = styled.section`
   width: 100%;
-  padding-top: 70px;
+  padding-top: 30px;
 `;

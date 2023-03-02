@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DirectionPinImg from "../../images/homeImages/pin.png";
+import DirectionPinImg from "../../images/homeImages/directionPin.png";
 import DirectionDownArrowImg from "../../images/homeImages/downArrow.png";
 import LocationImg from "../../images/homeImages/location.png";
 

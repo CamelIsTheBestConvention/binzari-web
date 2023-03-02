@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// import HomeFavorite from "../components/homeContent/homeFavorite";
+import HomeFavorite from "../components/homeContent/homeFavorite";
 import HomeHeader from "../components/homeContent/homeHeader";
 import HomeLeisure from "../components/homeContent/homeLeisure";
 
@@ -10,7 +10,7 @@ const Home = () => {
         <HomeWrapper>
           <HomeHeader />
           <HomeLeisure />
-          {/* <HomeFavorite /> */}
+          <HomeFavorite />
         </HomeWrapper>
       </HomeMain>
     </>
@@ -25,4 +25,5 @@ const HomeMain = styled.main`
 
 const HomeWrapper = styled.section`
   width: 100%;
+  padding-top: 30px;
 `;

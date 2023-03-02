@@ -17,7 +17,7 @@ export default HomeHeader;
 const HomeHeaderWrapper = styled.section`
   width: 100%;
   position: fixed;
-  top: 80px;
+  top: 46px;
   right: 0px;
-  //   background-color: #fff;
+  background-color: #fff;
 `;
