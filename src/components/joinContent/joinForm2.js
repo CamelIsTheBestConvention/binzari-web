@@ -8,7 +8,7 @@ import PwTitleCheck from "./pwTitleCheck";
 import TypeChoice from "./typeChoice";
 import TypeTitle from "./typeTitle";
 
-const JoinForm = () => {
+const JoinForm2 = () => {
   return (
     <>
       <form action="#">
@@ -32,7 +32,7 @@ const JoinForm = () => {
     </>
   );
 };
-export default JoinForm;
+export default JoinForm2;
 
 const TypeWrapper = styled.section`
   margin-bottom: 20px;

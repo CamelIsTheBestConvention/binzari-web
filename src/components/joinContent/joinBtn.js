@@ -21,5 +21,6 @@ const JoinSubmitBtn = styled.input`
   :hover {
     background-color: #8fffa9;
     transition: 0.5s;
+    cursor: pointer;
   }
 `;

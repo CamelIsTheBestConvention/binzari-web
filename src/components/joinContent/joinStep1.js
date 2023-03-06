@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-const JoinStep = () => {
+const JoinStep1 = () => {
   return (
     <>
       <StepWrapper>
-        <StepOne></StepOne>
-        <StepTwo>STEP 2. &nbsp;&nbsp;&nbsp;계정 만들기</StepTwo>
+        <StepOne>STEP 1. &nbsp;&nbsp;&nbsp;본인인증</StepOne>
+        <StepTwo></StepTwo>
       </StepWrapper>
     </>
   );
 };
-export default JoinStep;
+export default JoinStep1;
 
 const StepWrapper = styled.section`
   width: 100%;
@@ -22,12 +22,12 @@ const StepWrapper = styled.section`
 
 const StepOne = styled.article`
   width: 50%;
-  border-bottom: 1px solid #a0a0a0;
+  border-bottom: 2px solid #8fffa9;
+  padding-bottom: 5px;
+  text-align: center;
 `;
 
 const StepTwo = styled.article`
   width: 50%;
-  text-align: center;
-  padding-bottom: 5px;
-  border-bottom: 2px solid #8fffa9;
+  border-bottom: 1px solid #a0a0a0;
 `;

@@ -1,4 +1,3 @@
-import Join from "../pages/join";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "../components/common/header/header";
 import Footer from "../components/common/footer/footer";
@@ -6,6 +5,7 @@ import styled from "styled-components";
 import Login from "../pages/login";
 import MyPage from "../pages/myPage";
 import Home from "../pages/home";
+import Join from "../pages/join";
 
 function Routing() {
   return (
@@ -14,9 +14,9 @@ function Routing() {
       <BrowserRouter>
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/join" element={<Join />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<MyPage />} />
+          <Route path="/join" element={<Join />} />
         </Routes>
       </BrowserRouter>
       <Footer />

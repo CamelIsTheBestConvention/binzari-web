@@ -6,7 +6,7 @@ const HomeSearch = () => {
     <>
       <HomeSearchWrapper>
         <HomeSearchBox>
-          <form action="https://search.naver.com/search.naver">
+          <form action="https://search.naver.com/search.naver?value">
             <HomeFormWrapper>
               <SearchInput type="text" placeholder="어디로 가고 싶으세요?" />
               <SearchButton type="submit">

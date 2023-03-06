@@ -1,7 +1,19 @@
 import styled from "styled-components";
 import JejuBilliard from "../../images/homeImages/jejuBilliard.jpg";
+import React, { useState } from "react";
 
 const FavoriteContentBox = () => {
+  const [star, setStar] = useState(false);
+  const [move, setMove] = useState(false);
+
+  const starStyle = {
+    color: star ? "yellow" : "black",
+  };
+
+  const handleClick = () => {
+    setStar(!star);
+  };
+
   return (
     <>
       <FavoriteContentBoxWrapper>
@@ -13,7 +25,9 @@ const FavoriteContentBox = () => {
             </div>
             <FavoriteContentBoxDivTitle>
               <span>제주당구장</span>
-              <StarSpan>☆</StarSpan>
+              <StarSpan onClick={handleClick} style={starStyle}>
+                {star ? "★" : "☆"}
+              </StarSpan>
             </FavoriteContentBoxDivTitle>
             <FavoriteContentBoxDivText>
               <span>남은 자리</span>
@@ -35,7 +49,9 @@ const FavoriteContentBox = () => {
             </div>
             <FavoriteContentBoxDivTitle>
               <span>제주당구장</span>
-              <StarSpan>☆</StarSpan>
+              <StarSpan onClick={handleClick} style={starStyle}>
+                {star ? "★" : "☆"}
+              </StarSpan>
             </FavoriteContentBoxDivTitle>
             <FavoriteContentBoxDivText>
               <span>남은 자리</span>
@@ -57,7 +73,9 @@ const FavoriteContentBox = () => {
             </div>
             <FavoriteContentBoxDivTitle>
               <span>제주당구장</span>
-              <StarSpan>☆</StarSpan>
+              <StarSpan onClick={handleClick} style={starStyle}>
+                {star ? "★" : "☆"}
+              </StarSpan>
             </FavoriteContentBoxDivTitle>
             <FavoriteContentBoxDivText>
               <span>남은 자리</span>
@@ -85,8 +103,12 @@ const FavoriteContentBoxWrapper = styled.article`
 `;
 
 const FavoriteContentBoxUl = styled.ul`
+  overflow: "hidden";
+  liststyle: "none";
   width: 100%;
   display: flex;
+  transition: transform 0.5s ease-in-out;
+  transform: move ? "translateX(-33.3333%)" : "translateX(0)",
 `;
 
 const FavoriteContentBoxLi = styled.li`
@@ -117,6 +139,7 @@ const FavoriteContentBoxDivTitle = styled.div`
 const StarSpan = styled.span`
   color: black;
   cursor: pointer;
+  margin-top: -2px;
 `;
 
 const FavoriteContentBoxDivText = styled.div`

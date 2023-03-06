@@ -1,10 +1,16 @@
 import styled from "styled-components";
 import NextBtn from "../../images/homeImages/rightBtn.png";
+import React, { useState } from "react";
 
 const FavoriteContentRightBtn = () => {
+  const [move, setMove] = useState(false);
+
+  const handleSlide = () => {
+    setMove(!move);
+  };
   return (
     <>
-      <FavoriteContentRightBtnWrapper>
+      <FavoriteContentRightBtnWrapper onClick={handleSlide}>
         <img src={NextBtn} alt="다음 버튼" />
       </FavoriteContentRightBtnWrapper>
     </>
