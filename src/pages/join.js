@@ -28,7 +28,7 @@ const Join = () => {
                 <JoinForm1 />
                 <NextJoinBtn
                   onClick={handleNext}
-                  style={{ allowed: NextRight ? "not-allowed" : "allowed" }}
+                  style={{ allowed: setNextRight ? "not-allowed" : "allowed" }}
                 >
                   다음
                 </NextJoinBtn>
