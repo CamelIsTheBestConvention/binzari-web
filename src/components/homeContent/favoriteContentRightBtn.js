@@ -3,14 +3,9 @@ import NextBtn from "../../images/homeImages/rightBtn.png";
 import React, { useState } from "react";
 
 const FavoriteContentRightBtn = () => {
-  const [move, setMove] = useState(false);
-
-  const handleSlide = () => {
-    setMove(!move);
-  };
   return (
     <>
-      <FavoriteContentRightBtnWrapper onClick={handleSlide}>
+      <FavoriteContentRightBtnWrapper>
         <img src={NextBtn} alt="다음 버튼" />
       </FavoriteContentRightBtnWrapper>
     </>
@@ -25,4 +20,9 @@ const FavoriteContentRightBtnWrapper = styled.button`
   font-size: 15px;
   // margin: 10px;
   cursor: pointer;
+
+  :hover {
+    background-color: lightgray;
+    opacity: 0.3;
+  }
 `;

@@ -4,7 +4,9 @@ const LoginJoin = () => {
   return (
     <>
       <LoginJoinWrapper>
-        <LoginJoinBtn>회원가입</LoginJoinBtn>
+        <a href="/join">
+          <LoginJoinBtn>회원가입</LoginJoinBtn>
+        </a>
       </LoginJoinWrapper>
     </>
   );

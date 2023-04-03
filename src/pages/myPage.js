@@ -1,16 +1,20 @@
 import styled from "styled-components";
 import MyProfile from "../components/myPageContent/myProfile";
 import MyProfileDetail from "../components/myPageContent/myProfileDetail";
+import Header from "../components/common/header/header";
+import Footer from "../components/common/footer/footer";
 
 const MyPage = () => {
   return (
     <>
+      <Header />
       <MyPageMain>
         <MyPageWrapper>
           <MyProfile />
           <MyProfileDetail />
         </MyPageWrapper>
       </MyPageMain>
+      <Footer />
     </>
   );
 };

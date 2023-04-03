@@ -19,7 +19,7 @@ export default Footer;
 
 const FooterWrapper = styled.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 500px;
   background-color: #dcdcdc;
   position: fixed;
   bottom: 0;

@@ -32,6 +32,7 @@ const PhoneInput = () => {
         {showNumber && <p>{randomNumber}</p>}
       </SendNumber>
       <SendCheckBtn
+        type="button"
         style={{ display: showNumber ? "block" : "none" }}
         onClick={handlerSendRight}
       >

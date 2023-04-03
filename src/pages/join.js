@@ -7,6 +7,8 @@ import JoinTitle from "../components/joinContent/joinTitle";
 import JoinStep1 from "../components/joinContent/joinStep1";
 import JoinForm2 from "../components/joinContent/joinForm2";
 import JoinForm1 from "../components/joinContent/joinForm1";
+import Header from "../components/common/header/header";
+import Footer from "../components/common/footer/footer";
 
 const Join = () => {
   const [step, setStep] = useState(1);
@@ -18,6 +20,7 @@ const Join = () => {
   const [NextRight, setNextRight] = useState(false);
   return (
     <>
+      <Header />
       <div>
         {step === 1 && (
           <form>
@@ -28,7 +31,7 @@ const Join = () => {
                 <JoinForm1 />
                 <NextJoinBtn
                   onClick={handleNext}
-                  style={{ allowed: NextRight ? "not-allowed" : "allowed" }}
+                  style={{ allowed: setNextRight ? "not-allowed" : "allowed" }}
                 >
                   다음
                 </NextJoinBtn>
@@ -48,6 +51,7 @@ const Join = () => {
           </JoinMain>
         )}
       </div>
+      <Footer />
     </>
   );
 };

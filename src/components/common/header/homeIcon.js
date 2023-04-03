@@ -5,8 +5,8 @@ const HomeIcon = () => {
   return (
     <>
       <HomeIconWrapper>
-        <a>
-          <img src={homeLogo} />
+        <a href="/">
+          <HomeImg src={homeLogo} />
         </a>
       </HomeIconWrapper>
     </>
@@ -18,4 +18,8 @@ const HomeIconWrapper = styled.div`
   position: absolute;
   top: 17px;
   left: 50px;
+`;
+
+const HomeImg = styled.img`
+  cursor: pointer;
 `;

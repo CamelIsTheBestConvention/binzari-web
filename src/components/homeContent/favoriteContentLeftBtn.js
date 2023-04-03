@@ -19,4 +19,9 @@ const FavoriteContentLeftBtnWrapper = styled.button`
   font-size: 15px;
   //   margin: 10px;
   cursor: pointer;
+
+  :hover {
+    background-color: lightgray;
+    opacity: 0.3;
+  }
 `;

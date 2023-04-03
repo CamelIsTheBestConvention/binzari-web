@@ -6,10 +6,13 @@ import LoginIf from "../components/loginContent/loginIf";
 import LoginJoin from "../components/loginContent/loginJoin";
 import LoginNaver from "../components/loginContent/loginNaver";
 import LoginTitle from "../components/loginContent/loginTitle";
+import Header from "../components/common/header/header";
+import Footer from "../components/common/footer/footer";
 
 const Login = () => {
   return (
     <>
+      <Header />
       <LoginMain>
         <LoginWrapper>
           <LoginTitle />
@@ -21,6 +24,7 @@ const Login = () => {
           <LoginJoin />
         </LoginWrapper>
       </LoginMain>
+      <Footer />
     </>
   );
 };

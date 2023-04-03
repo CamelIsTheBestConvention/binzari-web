@@ -2,10 +2,13 @@ import styled from "styled-components";
 import HomeFavorite from "../components/homeContent/homeFavorite";
 import HomeHeader from "../components/homeContent/homeHeader";
 import HomeLeisure from "../components/homeContent/homeLeisure";
+import Header from "../components/common/header/header";
+import Footer from "../components/common/footer/footer";
 
 const Home = () => {
   return (
     <>
+      <Header />
       <HomeMain>
         <HomeWrapper>
           <HomeHeader />
@@ -13,6 +16,7 @@ const Home = () => {
           <HomeFavorite />
         </HomeWrapper>
       </HomeMain>
+      <Footer />
     </>
   );
 };
@@ -26,4 +30,5 @@ const HomeMain = styled.main`
 const HomeWrapper = styled.section`
   width: 100%;
   padding-top: 30px;
+  position: relative;
 `;
