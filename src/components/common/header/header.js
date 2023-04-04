@@ -8,7 +8,7 @@ import HomeIcon from "./homeIcon";
 
 const Header = () => {
   const location = useLocation();
-  const [isHome, setIsHome] = useState(location.pathname === "/");
+  const [isHome, setIsHome] = useState(location.pathname === "/home");
 
   return (
     <>
@@ -30,14 +30,4 @@ const HeaderWrap = styled.div`
   display: flex;
   background-color: #fff;
   position: fixed;
-`;
-
-const HomeIconWrapper = styled.div`
-  position: absolute;
-  top: 17px;
-  left: 50px;
-`;
-
-const HomeImg = styled.img`
-  cursor: pointer;
 `;

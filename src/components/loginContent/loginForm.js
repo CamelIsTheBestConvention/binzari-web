@@ -2,11 +2,17 @@ import styled from "styled-components";
 import OpenEye from "../../images/loginImages/view.png";
 import CloseEye from "../../images/loginImages/hide.png";
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [ShowPw, setShowPw] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const navigate = useNavigate();
 
   const ToggleShowPw = () => {
     setShowPw(!ShowPw);
@@ -14,23 +20,24 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:4000/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
-    const data = await response.json();
-    console.log(data);
-  };
+    try {
+      const response = await axios.post("http://localhost:4000/api/login", {
+        email,
+        password,
+      });
+      console.log(response.data); // 로그인 성공 시 서버에서 반환한 데이터
+      const token = response.data.token; // 서버에서 반환된 토큰
+      const name = response.data.name; // 서버에서 반환된 이름
+      localStorage.setItem("token", token); // 토큰을 로컬 스토리지에 저장
+      localStorage.setItem("name", name); // 이름을 로컬 스토리지에 저장
 
-  const handleChangeEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleChangePassword = (e) => {
-    setPassword(e.target.value);
+      alert(`어서오세요, ${name}님`);
+      navigate("/home");
+    } catch (error) {
+      console.error(error);
+      setError("로그인에 실패했습니다.");
+      alert(`이메일이나 비밀번호가 맞지 않습니다.`);
+    }
   };
 
   return (
@@ -41,7 +48,7 @@ const LoginForm = () => {
             type="text"
             placeholder="example@email.com"
             value={email}
-            onChange={handleChangeEmail}
+            onChange={(event) => setEmail(event.target.value)}
           ></LoginEmailInput>
         </LoginWrapper>
 
@@ -52,7 +59,7 @@ const LoginForm = () => {
             minLength="8"
             maxLength="16"
             value={password}
-            onChange={handleChangePassword}
+            onChange={(event) => setPassword(event.target.value)}
           />
           {ShowPw ? (
             <PwChangeImg src={CloseEye} onClick={ToggleShowPw} />

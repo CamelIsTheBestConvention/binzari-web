@@ -9,13 +9,18 @@ const FavoriteContentBoxLi = () => {
     color: star ? "black" : "yellow",
   };
 
+  const boxStyle = {
+    display: star ? "none" : "block",
+  };
+
   const handleClick = () => {
+    window.confirm("관심목록에서 삭제하시겠습니까?");
     setStar(!star);
   };
 
   return (
     <>
-      <FavoriteContentBoxLiWrapper>
+      <FavoriteContentBoxLiWrapper style={boxStyle}>
         <div>
           <div>
             <FavoriteContentBoxDivImg src={JejuBilliard} alt="제주당구장" />
@@ -46,7 +51,8 @@ const FavoriteContentBoxLi = () => {
 export default FavoriteContentBoxLi;
 
 const FavoriteContentBoxLiWrapper = styled.li`
-  width: 50%;
+  width: 31%;
+  max-width: 50%;
   border-radius: 10px;
   background-color: #d9d9d9;
   margin: 0 1%;

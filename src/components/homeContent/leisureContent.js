@@ -9,95 +9,109 @@ const LeisureContent = () => {
     <>
       <LeisureContentWrapper>
         <LeisureContentTable>
-          <tr>
-            <LeisureContentTableTd>
-              <LeisureContentTableTdDiv>
-                <LeisureContentTableTdDivImg
-                  src={LeisureComputer}
-                  alt="피시방"
-                />
-              </LeisureContentTableTdDiv>
-            </LeisureContentTableTd>
-            <LeisureContentTableTd>
-              <LeisureContentTableTdDiv>
-                <LeisureContentTableTdDivImg src={LeisureSing} alt="노래방" />
-              </LeisureContentTableTdDiv>
-            </LeisureContentTableTd>
-            <LeisureContentTableTd>
-              <LeisureContentTableTdDiv>
-                <LeisureContentTableTdDivImg src={LeisureCue} alt="당구장" />
-              </LeisureContentTableTdDiv>
-            </LeisureContentTableTd>
-            <LeisureContentTableTd>
-              <LeisureContentTableTdDiv>
-                <LeisureContentTableTdDivImg
-                  src={LeisureBilliards}
-                  alt="포켓볼"
-                />
-              </LeisureContentTableTdDiv>
-            </LeisureContentTableTd>
-            <LeisureContentTableTd>
-              <LeisureContentTableTdDiv style={{ backgroundColor: "#D9D9D9" }}>
-                <NotService>서비스</NotService>
-                <p>제공예정</p>
-                <p>입니다</p>
-              </LeisureContentTableTdDiv>
-            </LeisureContentTableTd>
-          </tr>
+          <tbody>
+            <tr>
+              <LeisureContentTableTd>
+                <LeisureContentTableTdDiv>
+                  <LeisureContentTableTdDivImg
+                    src={LeisureComputer}
+                    alt="피시방"
+                  />
+                </LeisureContentTableTdDiv>
+              </LeisureContentTableTd>
+              <LeisureContentTableTd>
+                <LeisureContentTableTdDiv>
+                  <LeisureContentTableTdDivImg src={LeisureSing} alt="노래방" />
+                </LeisureContentTableTdDiv>
+              </LeisureContentTableTd>
+              <LeisureContentTableTd>
+                <LeisureContentTableTdDiv>
+                  <LeisureContentTableTdDivImg src={LeisureCue} alt="당구장" />
+                </LeisureContentTableTdDiv>
+              </LeisureContentTableTd>
+              <LeisureContentTableTd>
+                <LeisureContentTableTdDiv>
+                  <LeisureContentTableTdDivImg
+                    src={LeisureBilliards}
+                    alt="포켓볼"
+                  />
+                </LeisureContentTableTdDiv>
+              </LeisureContentTableTd>
+              <LeisureContentTableTd>
+                <LeisureContentTableTdDiv
+                  style={{ backgroundColor: "#D9D9D9" }}
+                >
+                  <NotService>서비스</NotService>
+                  <p>제공예정</p>
+                  <p>입니다</p>
+                </LeisureContentTableTdDiv>
+              </LeisureContentTableTd>
+            </tr>
 
-          <LeisureContentTableName>
-            <LeisureContentTableTd>PC방</LeisureContentTableTd>
-            <LeisureContentTableTd>노래방</LeisureContentTableTd>
-            <LeisureContentTableTd>당구장</LeisureContentTableTd>
-            <LeisureContentTableTd>포켓볼</LeisureContentTableTd>
-            <LeisureContentTableTd>볼링장</LeisureContentTableTd>
-          </LeisureContentTableName>
+            <LeisureContentTableName>
+              <LeisureContentTableTd>PC방</LeisureContentTableTd>
+              <LeisureContentTableTd>노래방</LeisureContentTableTd>
+              <LeisureContentTableTd>당구장</LeisureContentTableTd>
+              <LeisureContentTableTd>포켓볼</LeisureContentTableTd>
+              <LeisureContentTableTd>볼링장</LeisureContentTableTd>
+            </LeisureContentTableName>
 
-          <tr>
-            <LeisureContentTableTd>
-              <LeisureContentTableTdDiv style={{ backgroundColor: "#D9D9D9" }}>
-                <NotService>서비스</NotService>
-                <p>제공예정</p>
-                <p>입니다</p>
-              </LeisureContentTableTdDiv>
-            </LeisureContentTableTd>
-            <LeisureContentTableTd>
-              <LeisureContentTableTdDiv style={{ backgroundColor: "#D9D9D9" }}>
-                <NotService>서비스</NotService>
-                <p>제공예정</p>
-                <p>입니다</p>
-              </LeisureContentTableTdDiv>
-            </LeisureContentTableTd>
-            <LeisureContentTableTd>
-              <LeisureContentTableTdDiv style={{ backgroundColor: "#D9D9D9" }}>
-                <NotService>서비스</NotService>
-                <p>제공예정</p>
-                <p>입니다</p>
-              </LeisureContentTableTdDiv>
-            </LeisureContentTableTd>
-            <LeisureContentTableTd>
-              <LeisureContentTableTdDiv style={{ backgroundColor: "#D9D9D9" }}>
-                <NotService>서비스</NotService>
-                <p>제공예정</p>
-                <p>입니다</p>
-              </LeisureContentTableTdDiv>
-            </LeisureContentTableTd>
-            <LeisureContentTableTd>
-              <LeisureContentTableTdDiv style={{ backgroundColor: "#D9D9D9" }}>
-                <NotService>서비스</NotService>
-                <p>제공예정</p>
-                <p>입니다</p>
-              </LeisureContentTableTdDiv>
-            </LeisureContentTableTd>
-          </tr>
+            <tr>
+              <LeisureContentTableTd>
+                <LeisureContentTableTdDiv
+                  style={{ backgroundColor: "#D9D9D9" }}
+                >
+                  <NotService>서비스</NotService>
+                  <p>제공예정</p>
+                  <p>입니다</p>
+                </LeisureContentTableTdDiv>
+              </LeisureContentTableTd>
+              <LeisureContentTableTd>
+                <LeisureContentTableTdDiv
+                  style={{ backgroundColor: "#D9D9D9" }}
+                >
+                  <NotService>서비스</NotService>
+                  <p>제공예정</p>
+                  <p>입니다</p>
+                </LeisureContentTableTdDiv>
+              </LeisureContentTableTd>
+              <LeisureContentTableTd>
+                <LeisureContentTableTdDiv
+                  style={{ backgroundColor: "#D9D9D9" }}
+                >
+                  <NotService>서비스</NotService>
+                  <p>제공예정</p>
+                  <p>입니다</p>
+                </LeisureContentTableTdDiv>
+              </LeisureContentTableTd>
+              <LeisureContentTableTd>
+                <LeisureContentTableTdDiv
+                  style={{ backgroundColor: "#D9D9D9" }}
+                >
+                  <NotService>서비스</NotService>
+                  <p>제공예정</p>
+                  <p>입니다</p>
+                </LeisureContentTableTdDiv>
+              </LeisureContentTableTd>
+              <LeisureContentTableTd>
+                <LeisureContentTableTdDiv
+                  style={{ backgroundColor: "#D9D9D9" }}
+                >
+                  <NotService>서비스</NotService>
+                  <p>제공예정</p>
+                  <p>입니다</p>
+                </LeisureContentTableTdDiv>
+              </LeisureContentTableTd>
+            </tr>
 
-          <LeisureContentTableName>
-            <LeisureContentTableTd>탁구장</LeisureContentTableTd>
-            <LeisureContentTableTd>보드게임</LeisureContentTableTd>
-            <LeisureContentTableTd>마사지</LeisureContentTableTd>
-            <LeisureContentTableTd>카페</LeisureContentTableTd>
-            <LeisureContentTableTd>스터디카페</LeisureContentTableTd>
-          </LeisureContentTableName>
+            <LeisureContentTableName>
+              <LeisureContentTableTd>탁구장</LeisureContentTableTd>
+              <LeisureContentTableTd>보드게임</LeisureContentTableTd>
+              <LeisureContentTableTd>마사지</LeisureContentTableTd>
+              <LeisureContentTableTd>카페</LeisureContentTableTd>
+              <LeisureContentTableTd>스터디카페</LeisureContentTableTd>
+            </LeisureContentTableName>
+          </tbody>
         </LeisureContentTable>
       </LeisureContentWrapper>
     </>

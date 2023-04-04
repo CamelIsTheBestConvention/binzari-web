@@ -4,13 +4,15 @@ import Login from "../pages/login";
 import MyPage from "../pages/myPage";
 import Home from "../pages/home";
 import Join from "../pages/join";
+import LoginForm from "../components/loginContent/loginForm";
 
 function Routing() {
   return (
     <TotalWrapper>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" exact component={LoginForm} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<MyPage />} />
           <Route path="/join" element={<Join />} />

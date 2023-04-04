@@ -2,10 +2,17 @@ import styled from "styled-components";
 import alertIcon from "../../../images/headerImages/bell.png";
 import userIcon from "../../../images/headerImages/user.png";
 import loginIcon from "../../../images/headerImages/login.png";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const ProfileIcon = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const user = localStorage.getItem("name");
+    if (user) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   return (
     <>
@@ -13,13 +20,16 @@ const ProfileIcon = () => {
         <a style={{ marginRight: "10px" }}>
           <AlertImg src={alertIcon} />
         </a>
-        <a href="/login">
-          {isLoggedIn ? (
-            <LoginImg src={userIcon} alt="loginBtn" />
-          ) : (
-            <LoginImg src={loginIcon} alt="mypageBtn" />
-          )}
-        </a>
+
+        {isLoggedIn ? (
+          <a href="/profile">
+            <LoginImg src={userIcon} alt="mypageBtn" />
+          </a>
+        ) : (
+          <a href="/login">
+            <LoginImg src={loginIcon} alt="loginBtn" />
+          </a>
+        )}
       </RightIconWrapper>
     </>
   );
