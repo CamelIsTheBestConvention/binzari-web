@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React, { useState } from "react";
 
-const PhoneInput = () => {
+const PhoneInput = ({ handlePhoneChange }) => {
   const [randomNumber, setRandomNumber] = useState("");
   const [showNumber, setShowNumber] = useState(false);
   const [NextRight, setNextRight] = useState(false);
@@ -20,10 +20,15 @@ const PhoneInput = () => {
     setShowNumber(true);
   };
 
+  const onPhoneHandle = (e) => {
+    const value = e.target.value;
+    handlePhoneChange(value);
+  };
+
   return (
     <>
       <PhoneInputWrapper>
-        <Input type="text" placeholder="01012345678" />
+        <Input type="text" placeholder="01012345678" onChange={onPhoneHandle} />
         <SendBtn type="button" onClick={handlerSend}>
           인증번호 발송
         </SendBtn>

@@ -1,10 +1,16 @@
 import styled from "styled-components";
+import React, { useState } from "react";
 
-const NameInput = () => {
+const NameInput = ({ handleNameChange }) => {
+  const onNameHandle = (e) => {
+    const value = e.target.value;
+    handleNameChange(value);
+  };
+
   return (
     <>
       <NameInputWrapper>
-        <Input type="text" placeholder="성이름" />
+        <Input type="text" placeholder="성이름" onChange={onNameHandle} />
       </NameInputWrapper>
     </>
   );

@@ -3,11 +3,16 @@ import styled from "styled-components";
 import OpenEye from "../../images/joinImages/view.png";
 import CloseEye from "../../images/joinImages/hide.png";
 
-const PwInput = () => {
+const PwInput = ({ handlePasswordChange }) => {
   const [ShowPw, setShowPw] = useState(false);
 
   const ToggleShowPw = () => {
     setShowPw(!ShowPw);
+  };
+
+  const onPasswordHandle = (e) => {
+    const value = e.target.value;
+    handlePasswordChange(value);
   };
   return (
     <>
@@ -17,6 +22,7 @@ const PwInput = () => {
           placeholder="Password#16000099"
           minlength="8"
           maxLength="16"
+          onChange={onPasswordHandle}
         />
         {ShowPw ? (
           <EyeImg src={CloseEye} onClick={ToggleShowPw} />

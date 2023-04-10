@@ -1,10 +1,20 @@
 import styled from "styled-components";
+import React, { useState } from "react";
 
-const EmailInput = () => {
+const EmailInput = ({ handleEmailChange }) => {
+  const onEmailHandle = (e) => {
+    const value = e.target.value;
+    handleEmailChange(value);
+  };
+
   return (
     <>
       <EmailInputWrapper>
-        <Input type="email" placeholder="example@email.com" />
+        <Input
+          type="email"
+          placeholder="example@email.com"
+          onChange={onEmailHandle}
+        />
         <EmailBtn>인증하기</EmailBtn>
       </EmailInputWrapper>
     </>

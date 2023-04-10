@@ -2,11 +2,13 @@ import styled, { css } from "styled-components";
 import Check from "../../images/joinImages/check.png";
 import React, { useState } from "react";
 
-const TypeChoice = () => {
+const TypeChoice = ({ handleTypeChange }) => {
   const [isChecked, setIsChecked] = useState(false);
 
-  const handlerClickRadioBtn = () => {
+  const handlerClickRadioBtn = (e) => {
     setIsChecked(!isChecked);
+    const value = e.target.value;
+    handleTypeChange(value);
   };
 
   return (

@@ -2,15 +2,23 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import JoinAgree from "../components/joinContent/joinAgree";
 import JoinBtn from "../components/joinContent/joinBtn";
+import NameInput from "../components/joinContent/nameInput";
+import PhoneInput from "../components/joinContent/phoneInput";
+import PhoneCountry from "../components/joinContent/phoneCountry";
 import JoinStep2 from "../components/joinContent/joinStep2";
 import JoinTitle from "../components/joinContent/joinTitle";
 import JoinStep1 from "../components/joinContent/joinStep1";
-import JoinForm2 from "../components/joinContent/joinForm2";
-import JoinForm1 from "../components/joinContent/joinForm1";
+import EmailInput from "../components/joinContent/emailInput";
+import PwInput from "../components/joinContent/pwInput";
+import PwInputCheck from "../components/joinContent/pwInputCheck";
+import TypeChoice from "../components/joinContent/typeChoice";
 import Header from "../components/common/header/header";
 import Footer from "../components/common/footer/footer";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Join = () => {
+  // 다음단계
   const [step, setStep] = useState(1);
 
   const handleNext = () => {
@@ -18,17 +26,78 @@ const Join = () => {
   };
 
   const [NextRight, setNextRight] = useState(false);
+
+  // 인풋 props
+  const [email, setEmail] = useState("");
+  const emailChange = (value) => {
+    setEmail(value);
+  };
+
+  const [password, setPassword] = useState("");
+  const passwordChange = (value) => {
+    setPassword(value);
+  };
+
+  const [type, setType] = useState("");
+  const typeChange = (value) => {
+    setType(value);
+  };
+
+  const [name, setName] = useState("");
+  const nameChange = (value) => {
+    setName(value);
+  };
+
+  const [phone, setPhone] = useState("");
+  const phoneChange = (value) => {
+    setPhone(value);
+  };
+
+  const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:4000/api/join", {
+        name,
+        phone,
+        type,
+        email,
+        password,
+      });
+      console.log(response.data);
+      console.log(response.name);
+
+      alert(`회원가입이 완료되었습니다.`);
+      navigate("/login");
+    } catch (error) {
+      console.error(error);
+      setError("회원가입에 실패했습니다.");
+      alert(`회원가입을 못하는 상태입니다.`);
+    }
+  };
+
   return (
     <>
       <Header />
       <div>
-        {step === 1 && (
-          <form>
+        <form onSubmit={handleSubmit}>
+          {step === 1 && (
             <JoinMain>
               <JoinWrapper>
                 <JoinTitle />
                 <JoinStep1 />
-                <JoinForm1 />
+                <NameWrapper>
+                  <NameTitleWrapper>이름</NameTitleWrapper>
+                  <NameInput handleNameChange={nameChange} />
+                </NameWrapper>
+                <PhoneWrapper>
+                  <PhoneTitleWrapper>휴대전화</PhoneTitleWrapper>
+                  <PhoneCountry />
+                  <PhoneInput handlePhoneChange={phoneChange} />
+                </PhoneWrapper>
                 <NextJoinBtn
                   onClick={handleNext}
                   style={{ allowed: setNextRight ? "not-allowed" : "allowed" }}
@@ -37,19 +106,34 @@ const Join = () => {
                 </NextJoinBtn>
               </JoinWrapper>
             </JoinMain>
-          </form>
-        )}
-        {step === 2 && (
-          <JoinMain>
-            <JoinWrapper>
-              <JoinTitle />
-              <JoinStep2 />
-              <JoinForm2 />
-              <JoinAgree />
-              <JoinBtn />
-            </JoinWrapper>
-          </JoinMain>
-        )}
+          )}
+          {step === 2 && (
+            <JoinMain>
+              <JoinWrapper>
+                <JoinTitle />
+                <JoinStep2 />
+                <TypeWrapper>
+                  <TypeTitleWrapper>유형</TypeTitleWrapper>
+                  <TypeChoice handleTypeChange={typeChange} />
+                </TypeWrapper>
+                <EmailWrapper>
+                  <EmailTitleWrapper>이메일</EmailTitleWrapper>
+                  <EmailInput handleEmailChange={emailChange} />
+                </EmailWrapper>
+                <PwWrapper>
+                  <PwTitleWrapper>비밀번호</PwTitleWrapper>
+                  <PwInput handlePasswordChange={passwordChange} />
+                </PwWrapper>
+                <PwWrapper>
+                  <PwCheckTitleWrapper>비밀번호 확인</PwCheckTitleWrapper>
+                  <PwInputCheck />
+                </PwWrapper>
+                <JoinAgree />
+                <JoinBtn />
+              </JoinWrapper>
+            </JoinMain>
+          )}
+        </form>
       </div>
       <Footer />
     </>
@@ -82,4 +166,58 @@ const NextJoinBtn = styled.button`
     transition: 0.5s;
     cursor: pointer;
   }
+`;
+
+// form2 css
+const TypeWrapper = styled.section`
+  margin-bottom: 20px;
+`;
+
+const EmailWrapper = styled.section`
+  width: 100%;
+  margin-bottom: 30px;
+`;
+
+const PwWrapper = styled.section`
+  margin-bottom: 30px;
+`;
+
+const TypeTitleWrapper = styled.article`
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+`;
+
+const EmailTitleWrapper = styled.article`
+  font-size: 0.9rem;
+`;
+
+const PwTitleWrapper = styled.article`
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+`;
+
+const PwCheckTitleWrapper = styled.article`
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+`;
+
+// form1 css
+const NameWrapper = styled.section`
+  margin-bottom: 30px;
+`;
+
+const PhoneWrapper = styled.section`
+  width: 100%;
+  margin-bottom: 30px;
+`;
+
+const NameTitleWrapper = styled.article`
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+`;
+
+const PhoneTitleWrapper = styled.article`
+  font-size: 0.9rem;
+  margin-bottom: 10px;
 `;

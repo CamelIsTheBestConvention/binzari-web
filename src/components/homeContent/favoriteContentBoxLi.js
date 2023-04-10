@@ -58,6 +58,7 @@ const FavoriteContentBoxLiWrapper = styled.li`
   margin: 0 1%;
 
   @media (max-width: 420px) {
+    width: 40%;
     margin: 0 4.8%;
   }
 `;

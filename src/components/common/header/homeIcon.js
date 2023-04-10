@@ -5,7 +5,7 @@ const HomeIcon = () => {
   return (
     <>
       <HomeIconWrapper>
-        <a href="/home">
+        <a href="/">
           <HomeImg src={homeLogo} />
         </a>
       </HomeIconWrapper>

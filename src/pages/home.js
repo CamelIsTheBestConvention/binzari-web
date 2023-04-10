@@ -4,6 +4,7 @@ import HomeHeader from "../components/homeContent/homeHeader";
 import HomeLeisure from "../components/homeContent/homeLeisure";
 import Header from "../components/common/header/header";
 import Footer from "../components/common/footer/footer";
+import "../redux/redux";
 
 const Home = () => {
   return (

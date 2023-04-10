@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import ProfileArrowImg from "../../images/myPageImages/arrow.jpg";
+import React from "react";
 
 const ProfileInfo = () => {
+  const userName = sessionStorage.getItem("name");
   return (
     <>
       <ProfileInfoWrapper>
         <ProfileNickName>
-          역삼동무법자
+          {userName}
           <ArrowImg src={ProfileArrowImg} />
         </ProfileNickName>
         <ProfileType>개인회원</ProfileType>

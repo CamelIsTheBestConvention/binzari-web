@@ -32,7 +32,7 @@ const LoginForm = () => {
       localStorage.setItem("name", name); // 이름을 로컬 스토리지에 저장
 
       alert(`어서오세요, ${name}님`);
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       console.error(error);
       setError("로그인에 실패했습니다.");

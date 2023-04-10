@@ -26,10 +26,10 @@ const HomeFavoriteContent = () => {
     const minPosition = 0;
     const maxPosition = mediaQuery400.matches
       ? -(liCount - 2) * 50
-      : -(liCount - 3) * 33.5;
-    setPosition((prevPosition) => Math.min(prevPosition + 33.5, minPosition));
+      : -(liCount - 3) * 33;
+    setPosition((prevPosition) => Math.min(prevPosition + 33, minPosition));
     setNextDisabled(false);
-    if (position + 33.5 === minPosition) {
+    if (position + 33 === minPosition) {
       setPrevDisabled(true);
     }
     if (window.innerWidth <= 420) {
@@ -42,10 +42,10 @@ const HomeFavoriteContent = () => {
     const liCount = contentUlRef.current.children.length;
     const maxPosition = mediaQuery400.matches
       ? -(liCount - 2) * 50
-      : -(liCount - 3) * 33.5;
-    setPosition((prevPosition) => Math.max(prevPosition - 33.5, maxPosition));
+      : -(liCount - 3) * 33;
+    setPosition((prevPosition) => Math.max(prevPosition - 33, maxPosition));
     setPrevDisabled(false);
-    if (position - 33.5 === maxPosition) {
+    if (position - 33 === maxPosition) {
       setNextDisabled(true);
     }
     if (window.innerWidth <= 420) {

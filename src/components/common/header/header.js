@@ -8,7 +8,7 @@ import HomeIcon from "./homeIcon";
 
 const Header = () => {
   const location = useLocation();
-  const [isHome, setIsHome] = useState(location.pathname === "/home");
+  const [isHome, setIsHome] = useState(location.pathname === "/");
 
   return (
     <>
