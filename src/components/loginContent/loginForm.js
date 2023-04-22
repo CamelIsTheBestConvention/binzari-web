@@ -28,8 +28,8 @@ const LoginForm = () => {
       console.log(response.data); // 로그인 성공 시 서버에서 반환한 데이터
       const token = response.data.token; // 서버에서 반환된 토큰
       const name = response.data.name; // 서버에서 반환된 이름
-      localStorage.setItem("token", token); // 토큰을 로컬 스토리지에 저장
-      localStorage.setItem("name", name); // 이름을 로컬 스토리지에 저장
+      sessionStorage.setItem("token", token); // 토큰을 세션 스토리지에 저장
+      sessionStorage.setItem("name", name); // 이름을 세션 스토리지에 저장
 
       alert(`어서오세요, ${name}님`);
       navigate("/");

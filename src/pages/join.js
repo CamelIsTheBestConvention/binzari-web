@@ -27,6 +27,14 @@ const Join = () => {
 
   const [NextRight, setNextRight] = useState(false);
 
+  // 에러 메세지
+  const [nameMessage, setNameMessage] = useState("");
+  const [phoneMessage, setPhoneMessage] = useState("");
+
+  // 유효성 검사
+  const [isName, setIsName] = useState(false);
+  const [isPhone, setIsPhone] = useState(false);
+
   // 인풋 props
   const [email, setEmail] = useState("");
   const emailChange = (value) => {
@@ -53,6 +61,33 @@ const Join = () => {
     setPhone(value);
   };
 
+  // 검사
+  const onChangeNext1 = (e) => {
+    const currentName = e.target.value;
+    const currentPhone = e.target.value;
+    setName(currentName);
+    setPhone(currentPhone);
+    const nameRegExp = /^[가-힣]{2,6}$/;
+    const phoneRegExp = /^01(?:0|1|[6-9])(?:\d{3}|\d{4})\d{4}$/;
+
+    if (!nameRegExp.test(currentName)) {
+      setNameMessage("2~6글자 사이 한글만 입력 가능합니다!");
+      setIsName(false);
+    } else {
+      setNameMessage("사용가능한 이름입니다.");
+      setIsName(true);
+    }
+
+    if (!phoneRegExp.test(currentPhone)) {
+      setPhoneMessage("2~6글자 사이 한글만 입력 가능합니다!");
+      setIsPhone(false);
+    } else {
+      setPhoneMessage("사용가능한 이름입니다.");
+      setIsPhone(true);
+    }
+  };
+
+  // 에러 상태
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
@@ -69,6 +104,8 @@ const Join = () => {
       });
       console.log(response.data);
       console.log(response.name);
+      const token = response.data.token; // 서버에서 반환된 토큰
+      localStorage.setItem("token", token); // 토큰을 로컬 스토리지에 저장
 
       alert(`회원가입이 완료되었습니다.`);
       navigate("/login");
@@ -93,14 +130,17 @@ const Join = () => {
                   <NameTitleWrapper>이름</NameTitleWrapper>
                   <NameInput handleNameChange={nameChange} />
                 </NameWrapper>
+                <Message> {nameMessage} </Message>
                 <PhoneWrapper>
                   <PhoneTitleWrapper>휴대전화</PhoneTitleWrapper>
                   <PhoneCountry />
                   <PhoneInput handlePhoneChange={phoneChange} />
                 </PhoneWrapper>
+                <Message> {phoneMessage} </Message>
                 <NextJoinBtn
                   onClick={handleNext}
                   style={{ allowed: setNextRight ? "not-allowed" : "allowed" }}
+                  onChange={onChangeNext1}
                 >
                   다음
                 </NextJoinBtn>
@@ -220,4 +260,8 @@ const NameTitleWrapper = styled.article`
 const PhoneTitleWrapper = styled.article`
   font-size: 0.9rem;
   margin-bottom: 10px;
+`;
+
+const Message = styled.p`
+  font-size: 0.8rem;
 `;

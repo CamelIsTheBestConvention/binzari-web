@@ -6,9 +6,10 @@ const TypeChoice = ({ handleTypeChange }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handlerClickRadioBtn = (e) => {
-    setIsChecked(!isChecked);
     const value = e.target.value;
+    console.log(value);
     handleTypeChange(value);
+    setIsChecked(!isChecked);
   };
 
   return (
@@ -24,10 +25,9 @@ const TypeChoice = ({ handleTypeChange }) => {
             type="radio"
             name="id-type-radio"
             value="일반"
-            checked={isChecked === "normal"}
             onChange={handlerClickRadioBtn}
           />
-          <Label htmlFor="normal">일반</Label>
+          <Label for="normal">일반</Label>
           <CheckImg
             src={Check}
             id="normalImg"
@@ -44,10 +44,9 @@ const TypeChoice = ({ handleTypeChange }) => {
             type="radio"
             name="id-type-radio"
             value="사업자"
-            checked={isChecked === "master"}
             onChange={handlerClickRadioBtn}
           />
-          <Label htmlFor="master">사업자</Label>
+          <Label for="master">사업자</Label>
           <CheckImg
             src={Check}
             id="masterImg"
@@ -64,10 +63,9 @@ const TypeChoice = ({ handleTypeChange }) => {
             type="radio"
             name="id-type-radio"
             value="법인"
-            checked={isChecked === "law"}
             onChange={handlerClickRadioBtn}
           />
-          <Label htmlFor="law">법인</Label>
+          <Label for="law">법인</Label>
           <CheckImg src={Check} id="lawImg" isChecked={isChecked === "law"} />
         </TypeWrapper>
       </TypeChoiceWrapper>

@@ -8,7 +8,7 @@ const ProfileIcon = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    const user = localStorage.getItem("name");
+    const user = sessionStorage.getItem("name");
     if (user) {
       setIsLoggedIn(true);
     }
