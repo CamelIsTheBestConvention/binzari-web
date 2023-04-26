@@ -5,6 +5,7 @@ import loginIcon from "../../../images/headerImages/login.png";
 import React, { useState, useEffect } from "react";
 
 const ProfileIcon = () => {
+  // 로그인 시 아이콘 바꾸기
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -14,12 +15,19 @@ const ProfileIcon = () => {
     }
   }, []);
 
+  const [alarmOn, setAlarmOn] = useState(false);
+
+  const openAlarm = () => {
+    setAlarmOn = !alarmOn;
+    if (alarmOn === true) {
+      AlarmWrapper.current.style.height = 0;
+    }
+  };
+
   return (
     <>
       <RightIconWrapper>
-        <a href="/alarm" style={{ marginRight: "10px" }}>
-          <AlertImg src={alertIcon} />
-        </a>
+        <AlertImg src={alertIcon} onClick={openAlarm} />
 
         {isLoggedIn ? (
           <a href="/profile">
@@ -31,6 +39,78 @@ const ProfileIcon = () => {
           </a>
         )}
       </RightIconWrapper>
+      <AlarmWrapper>
+        <AlarmUl>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었을까 안되었을까?</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+          <AlarmLi>
+            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+            <AlarmTime>7:01 pm</AlarmTime>
+          </AlarmLi>
+        </AlarmUl>
+      </AlarmWrapper>
     </>
   );
 };
@@ -48,4 +128,59 @@ const LoginImg = styled.img`
 
 const AlertImg = styled.img`
   cursor: pointer;
+  margin-right: 10px;
+`;
+
+const AlarmWrapper = styled.div`
+  position: absolute;
+  top: 4rem;
+  left: 21%;
+  width: 74%;
+  height: 1207%;
+  border-radius: 1rem;
+  background-color: lightgray;
+  opacity: 0.8;
+
+  :after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -16px;
+    right: 53px;
+    width: 0px;
+    height: 0px;
+    border-right: 17px solid transparent;
+    border-bottom: 16px solid lightgray;
+  }
+`;
+
+const AlarmUl = styled.ul`
+  width: 80%;
+  height: 85%;
+  margin: 1rem auto;
+  padding: 1rem;
+  overflow: auto;
+`;
+
+const AlarmLi = styled.li`
+  border-bottom: 2px solid gray;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const AlarmP = styled.p`
+  width: 70%;
+  height: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.7rem;
+`;
+
+const AlarmTime = styled.span`
+  font-size: 0.7rem;
 `;

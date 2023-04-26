@@ -30,4 +30,5 @@ const HeaderWrap = styled.div`
   display: flex;
   background-color: #fff;
   position: fixed;
+  z-index: 999;
 `;
