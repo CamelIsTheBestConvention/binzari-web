@@ -17,7 +17,7 @@ const ProfileIcon = () => {
   return (
     <>
       <RightIconWrapper>
-        <a style={{ marginRight: "10px" }}>
+        <a href="/alarm" style={{ marginRight: "10px" }}>
           <AlertImg src={alertIcon} />
         </a>
 
