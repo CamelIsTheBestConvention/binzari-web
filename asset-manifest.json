@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6b4f2692.css",
+    "main.js": "/static/js/main.97aee5c9.js",
+    "static/media/danggu.jpg": "/static/media/danggu.fb195f801f9bc5aaa6eb.jpg",
+    "static/media/personProfile.png": "/static/media/personProfile.043d6a40f03c869bde88.png",
+    "static/media/businessProfile.png": "/static/media/businessProfile.51787a1e1756497a703f.png",
+    "static/media/jejuBilliard.jpg": "/static/media/jejuBilliard.a7d3feffd3425be65344.jpg",
+    "index.html": "/index.html",
+    "main.6b4f2692.css.map": "/static/css/main.6b4f2692.css.map",
+    "main.97aee5c9.js.map": "/static/js/main.97aee5c9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b4f2692.css",
+    "static/js/main.97aee5c9.js"
+  ]
+}
