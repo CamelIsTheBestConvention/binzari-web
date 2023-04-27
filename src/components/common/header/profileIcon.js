@@ -15,13 +15,11 @@ const ProfileIcon = () => {
     }
   }, []);
 
+  // 알림창
   const [alarmOn, setAlarmOn] = useState(false);
 
   const openAlarm = () => {
-    setAlarmOn = !alarmOn;
-    if (alarmOn === true) {
-      AlarmWrapper.current.style.height = 0;
-    }
+    setAlarmOn(!alarmOn);
   };
 
   return (
@@ -39,78 +37,80 @@ const ProfileIcon = () => {
           </a>
         )}
       </RightIconWrapper>
-      <AlarmWrapper>
-        <AlarmUl>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었을까 안되었을까?</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-          <AlarmLi>
-            <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
-            <AlarmTime>7:01 pm</AlarmTime>
-          </AlarmLi>
-        </AlarmUl>
-      </AlarmWrapper>
+      {alarmOn && (
+        <AlarmWrapper>
+          <AlarmUl>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었을까 안되었을까?</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+            <AlarmLi>
+              <AlarmP>당구장 예약이 완료되었습니다.</AlarmP>
+              <AlarmTime>7:01 pm</AlarmTime>
+            </AlarmLi>
+          </AlarmUl>
+        </AlarmWrapper>
+      )}
     </>
   );
 };
@@ -139,7 +139,7 @@ const AlarmWrapper = styled.div`
   height: 1207%;
   border-radius: 1rem;
   background-color: lightgray;
-  opacity: 0.8;
+  opacity: 0.9;
 
   :after {
     display: block;
