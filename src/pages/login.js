@@ -32,7 +32,7 @@ export default Login;
 
 const LoginMain = styled.main`
   width: 80%;
-  min-height: 700px;
+  min-height: 600px;
   max-width: 500px;
   margin: 0 auto;
 `;
