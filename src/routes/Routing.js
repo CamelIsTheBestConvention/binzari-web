@@ -5,6 +5,7 @@ import MyPage from "../pages/myPage";
 import Home from "../pages/home";
 import Join from "../pages/join";
 import Detail from "../pages/detail";
+import Board from "../pages/board";
 
 function Routing() {
   return (
@@ -16,6 +17,7 @@ function Routing() {
           <Route path="/profile" element={<MyPage />} />
           <Route path="/join" element={<Join />} />
           <Route path="/store/detail" element={<Detail />} />
+          <Route path="/store" element={<Board />} />
         </Routes>
       </BrowserRouter>
     </TotalWrapper>
