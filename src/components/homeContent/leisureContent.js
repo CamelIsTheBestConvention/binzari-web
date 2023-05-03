@@ -12,12 +12,14 @@ const LeisureContent = () => {
           <tbody>
             <tr>
               <LeisureContentTableTd>
-                <LeisureContentTableTdDiv>
-                  <LeisureContentTableTdDivImg
-                    src={LeisureComputer}
-                    alt="피시방"
-                  />
-                </LeisureContentTableTdDiv>
+                <a href="/store">
+                  <LeisureContentTableTdDiv>
+                    <LeisureContentTableTdDivImg
+                      src={LeisureComputer}
+                      alt="피시방"
+                    />
+                  </LeisureContentTableTdDiv>
+                </a>
               </LeisureContentTableTd>
               <LeisureContentTableTd>
                 <LeisureContentTableTdDiv>

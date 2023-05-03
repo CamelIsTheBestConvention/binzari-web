@@ -51,15 +51,15 @@ const FavoriteContentBoxLi = () => {
 export default FavoriteContentBoxLi;
 
 const FavoriteContentBoxLiWrapper = styled.li`
-  width: 31%;
+  width: 33%;
   max-width: 50%;
   border-radius: 10px;
   background-color: #d9d9d9;
-  margin: 0 1%;
+  margin: 0 3.6%;
 
   @media (max-width: 420px) {
     width: 40%;
-    margin: 0 4.8%;
+    margin: 0 8.5%;
   }
 `;
 

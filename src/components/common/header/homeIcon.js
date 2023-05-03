@@ -17,7 +17,7 @@ export default HomeIcon;
 const HomeIconWrapper = styled.div`
   position: absolute;
   top: 17px;
-  left: 50px;
+  left: 30px;
 `;
 
 const HomeImg = styled.img`

@@ -22,8 +22,8 @@ const HomeSearch = () => {
 export default HomeSearch;
 
 const HomeSearchWrapper = styled.section`
-  width: 80%;
-  max-width: 400px;
+  width: 90%;
+  max-width: 420px;
   padding: 10px 0;
   margin: 0 auto;
 `;
@@ -41,8 +41,8 @@ const HomeFormWrapper = styled.article`
 `;
 
 const SearchInput = styled.input`
-  width: 80%;
-  margin-left: 5px;
+  width: 85%;
+  margin-left: 1rem;
   height: 30px;
   border: none;
   border-radius: 10px;

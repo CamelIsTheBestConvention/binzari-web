@@ -94,7 +94,7 @@ const HomeFavoriteContentWrapper = styled.article`
 `;
 
 const FavoriteContentBoxWrapper = styled.article`
-  width: 83%;
+  width: 100%;
   overflow: hidden;
 `;
 

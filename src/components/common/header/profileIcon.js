@@ -118,7 +118,7 @@ export default ProfileIcon;
 
 const RightIconWrapper = styled.div`
   position: absolute;
-  right: 50px;
+  right: 30px;
   top: 17px;
 `;
 
@@ -146,7 +146,7 @@ const AlarmWrapper = styled.div`
     content: "";
     position: absolute;
     top: -16px;
-    right: 53px;
+    right: 33px;
     width: 0px;
     height: 0px;
     border-right: 17px solid transparent;

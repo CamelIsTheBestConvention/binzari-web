@@ -28,8 +28,8 @@ const HomeDirection = () => {
 export default HomeDirection;
 
 const HomeDirectionWrapper = styled.section`
-  width: 80%;
-  max-width: 400px;
+  width: 90%;
+  max-width: 420px;
   display: flex;
   justify-content: space-between;
   margin: 0 auto 10px auto;

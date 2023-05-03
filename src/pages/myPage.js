@@ -21,7 +21,7 @@ const MyPage = () => {
 export default MyPage;
 
 const MyPageMain = styled.main`
-  width: 80%;
+  width: 90%;
   min-height: 600px;
   max-width: 500px;
   margin: 0 auto;

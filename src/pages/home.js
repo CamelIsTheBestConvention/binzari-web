@@ -24,7 +24,7 @@ const Home = () => {
 export default Home;
 
 const HomeMain = styled.main`
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 `;
 
