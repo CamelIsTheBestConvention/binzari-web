@@ -6,18 +6,74 @@ import UpArrow from "../../images/storeImages/upArrow.png";
 import { useState, useRef } from "react";
 
 const StoreSecondHeader = () => {
-  const [menuOn, setMenuOn] = useState(false);
-  const menuOpen = useRef(null);
+  const [leisureMenuOn, setLeisureMenuOn] = useState(false);
+  const [distanceMenuOn, setDistanceMenuOn] = useState(false);
+  const leisureMenuOpen = useRef(null);
+  const distanceMenuOpen = useRef(null);
 
-  const MenuHandler = () => {
-    setMenuOn(!menuOn);
-    menuOpen.current.styled.display = "block";
+  const LeisureMenuHandler = () => {
+    setLeisureMenuOn(!leisureMenuOn);
+    leisureMenuOn
+      ? (leisureMenuOpen.current.style.display = "none")
+      : (leisureMenuOpen.current.style.display = "block");
+  };
+
+  const DistanceMenuHandler = () => {
+    setDistanceMenuOn(!distanceMenuOn);
+    distanceMenuOn
+      ? (distanceMenuOpen.current.style.display = "none")
+      : (distanceMenuOpen.current.style.display = "block");
   };
 
   const [leisureFilter, setLeisureFilter] = useState("당구장");
+  const [distanceFilter, setDistanceFilter] = useState("인기 순");
 
   const LeisureFilterHandler = (e) => {
-    e.target.value();
+    const leisureValue = e.target.value;
+
+    switch (leisureValue) {
+      case 1:
+        setLeisureFilter("당구장");
+        break;
+      case 2:
+        setLeisureFilter("볼링장");
+        break;
+      case 3:
+        setLeisureFilter("노래방");
+        break;
+      case 4:
+        setLeisureFilter("PC방");
+        break;
+      case 5:
+        setLeisureFilter("골프");
+        break;
+    }
+    setLeisureMenuOn(!leisureMenuOn);
+    leisureMenuOpen.current.style.display = "none";
+  };
+
+  const DistanceFilterHandler = (e) => {
+    const leisureValue = e.target.value;
+
+    switch (leisureValue) {
+      case 1:
+        setDistanceFilter("인기 순");
+        break;
+      case 2:
+        setDistanceFilter("요금 낮은 순");
+        break;
+      case 3:
+        setDistanceFilter("요금 비싼 순");
+        break;
+      case 4:
+        setDistanceFilter("거리 가까운 순");
+        break;
+      case 5:
+        setDistanceFilter("자리 많은 순");
+        break;
+    }
+    setDistanceMenuOn(!distanceMenuOn);
+    distanceMenuOpen.current.style.display = "none";
   };
 
   return (
@@ -27,29 +83,65 @@ const StoreSecondHeader = () => {
         <SecondHeaderLeisure>
           <LeisureFilterImg src={LeisureFilterIcon} />
           {/* 필터목록 */}
-          <LeisureFilterDiv onClick={MenuHandler}>
-            <LeisureFilterInput value={leisureFilter} readonly />
-            <LeisureFilterUl ref={menuOpen}>
-              <LeisureFilterLi value="1" onClick={LeisureFilterHandler}>
-                당구장
-              </LeisureFilterLi>
-              <LeisureFilterLi>볼링장</LeisureFilterLi>
-              <LeisureFilterLi>노래방</LeisureFilterLi>
-              <LeisureFilterLi>PC방</LeisureFilterLi>
-            </LeisureFilterUl>
-            {menuOn ? <DownImg src={UpArrow} /> : <DownImg src={DownArrow} />}
+          <LeisureFilterDiv>
+            <div style={{ width: "100%" }}>
+              <LeisureFilterInput value={leisureFilter} readonly />
+              <LeisureFilterUl ref={leisureMenuOpen}>
+                <LeisureFilterLi value="1" onClick={LeisureFilterHandler}>
+                  당구장
+                </LeisureFilterLi>
+                <LeisureFilterLi value="2" onClick={LeisureFilterHandler}>
+                  볼링장
+                </LeisureFilterLi>
+                <LeisureFilterLi value="3" onClick={LeisureFilterHandler}>
+                  노래방
+                </LeisureFilterLi>
+                <LeisureFilterLi value="4" onClick={LeisureFilterHandler}>
+                  PC방
+                </LeisureFilterLi>
+                <LeisureFilterLi value="5" onClick={LeisureFilterHandler}>
+                  골프
+                </LeisureFilterLi>
+              </LeisureFilterUl>
+            </div>
+            {leisureMenuOn ? (
+              <DownImg src={UpArrow} onClick={LeisureMenuHandler} />
+            ) : (
+              <DownImg src={DownArrow} onClick={LeisureMenuHandler} />
+            )}
           </LeisureFilterDiv>
         </SecondHeaderLeisure>
         {/* 순서 필터 */}
         <SecondHeaderFilter>
           <FilterImg src={FilterIcon} />
           {/* 필터목록 */}
-          <LeisureFilterDiv>
-            <LeisureFilterUl>
-              <LeisureFilterLi>거리 가까운순</LeisureFilterLi>
-            </LeisureFilterUl>
-            <DownImg src={DownArrow} />
-          </LeisureFilterDiv>
+          <DistanceFilterDiv>
+            <div style={{ width: "100%" }}>
+              <DistanceFilterInput value={distanceFilter} readonly />
+              <DistanceFilterUl ref={distanceMenuOpen}>
+                <DistanceFilterLi value="1" onClick={DistanceFilterHandler}>
+                  인기 순
+                </DistanceFilterLi>
+                <DistanceFilterLi value="2" onClick={DistanceFilterHandler}>
+                  요금 낮은 순
+                </DistanceFilterLi>
+                <DistanceFilterLi value="3" onClick={DistanceFilterHandler}>
+                  요금 비싼 순
+                </DistanceFilterLi>
+                <DistanceFilterLi value="4" onClick={DistanceFilterHandler}>
+                  거리 가까운 순
+                </DistanceFilterLi>
+                <DistanceFilterLi value="5" onClick={DistanceFilterHandler}>
+                  자리 많은 순
+                </DistanceFilterLi>
+              </DistanceFilterUl>
+            </div>
+            {distanceMenuOn ? (
+              <DownImg src={UpArrow} onClick={DistanceMenuHandler} />
+            ) : (
+              <DownImg src={DownArrow} onClick={DistanceMenuHandler} />
+            )}
+          </DistanceFilterDiv>
         </SecondHeaderFilter>
       </StoreSecondWrapper>
     </>
@@ -72,7 +164,7 @@ const SecondHeaderLeisure = styled.article`
 const LeisureFilterImg = styled.img`
   width: 1.1rem;
   height: 1.1rem;
-  margin: auto;
+  margin-top: 0.3rem;
 `;
 
 const LeisureFilterDiv = styled.article`
@@ -81,7 +173,6 @@ const LeisureFilterDiv = styled.article`
   padding: 0.3rem 0.5rem;
   display: flex;
   margin-left: 0.3rem;
-  height: 0.9rem;
   position: relative;
 `;
 
@@ -91,23 +182,35 @@ const LeisureFilterInput = styled.input`
   font-weight: 700;
   font-size: 0.9rem;
   outline: none;
+  padding: 0 0 0 1px;
+  margin-bottom: 0.2rem;
 `;
 
 const LeisureFilterUl = styled.ul`
-  margin-right: 0.5rem;
-  font-size: 0.9rem;
-  //   display: none;
-  position: absolute;
+  width: 83%;
   top: 100%;
   background-color: #fff;
+  display: none;
+  position: absolute;
+  top: 74%;
+  left: -1%;
+  border: 1px solid black;
+  border-top: none;
+  border-radius: 0 0 0.7rem 0.7rem;
+  padding: 0.5rem;
+  z-index: 5;
 `;
 
-const LeisureFilterLi = styled.li``;
+const LeisureFilterLi = styled.li`
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.3rem 0;
+`;
 
 const DownImg = styled.img`
   width: 0.9rem;
   height: 0.8rem;
-  margin-top: 0.1rem;
+  margin-top: 0.2rem;
 `;
 
 const SecondHeaderFilter = styled.article`
@@ -117,5 +220,45 @@ const SecondHeaderFilter = styled.article`
 const FilterImg = styled.img`
   width: 1.3rem;
   height: 1.3rem;
-  margin: auto;
+  margin-top: 0.3rem;
+`;
+
+const DistanceFilterDiv = styled.article`
+  border: 1px solid black;
+  border-radius: 0.7rem;
+  padding: 0.3rem 0.5rem;
+  display: flex;
+  margin-left: 0.3rem;
+  position: relative;
+`;
+
+const DistanceFilterInput = styled.input`
+  border: none;
+  width: 6rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  outline: none;
+  padding: 0 0 0 1px;
+  margin-bottom: 0.2rem;
+`;
+
+const DistanceFilterUl = styled.ul`
+  width: 87.5%;
+  top: 100%;
+  background-color: #fff;
+  display: none;
+  position: absolute;
+  top: 74%;
+  left: -1px;
+  border: 1px solid black;
+  border-top: none;
+  border-radius: 0 0 0.7rem 0.7rem;
+  padding: 0.5rem;
+  z-index: 5;
+`;
+
+const DistanceFilterLi = styled.li`
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.3rem 0;
 `;
