@@ -40,6 +40,7 @@ const BlackListWrapper = styled.div`
 const BlackListTitle = styled.p`
   font-weight: bold;
   margin-bottom: 0.4em;
+  font-size: 1.1rem;
 `;
 
 const BlackListUl = styled.ul`

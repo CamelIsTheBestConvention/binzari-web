@@ -44,6 +44,7 @@ const FavoriteStoreWrapper = styled.div`
 const FavoriteStoreTitle = styled.p`
   font-weight: bold;
   margin-bottom: 0.4em;
+  font-size: 1.1rem;
 `;
 
 const FavoriteStoreUl = styled.ul`
@@ -60,8 +61,8 @@ const FavoriteStoreLi = styled.li`
 
 const FavoriteStoreImgWrapper = styled.div`
   border-radius: 70%;
-  max-width: 55px;
-  max-height: 55px;
+  width: 15%;
+  height: 15%;
   overflow: hidden;
 `;
 

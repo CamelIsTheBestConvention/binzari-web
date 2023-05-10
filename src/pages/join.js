@@ -105,14 +105,14 @@ const Join = () => {
       console.log(response.data);
       console.log(response.name);
       const token = response.data.token; // 서버에서 반환된 토큰
-      localStorage.setItem("token", token); // 토큰을 로컬 스토리지에 저장
+      localStorage.setItem("join", token); // 토큰을 로컬 스토리지에 저장
 
       alert(`회원가입이 완료되었습니다.`);
       navigate("/login");
     } catch (error) {
       console.error(error);
       setError("회원가입에 실패했습니다.");
-      alert(`회원가입을 못하는 상태입니다.`);
+      alert(`입력상태를 확인해주세요.`);
     }
   };
 

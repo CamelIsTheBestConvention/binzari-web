@@ -20,19 +20,21 @@ export default ProfileInfo;
 
 const ProfileInfoWrapper = styled.div`
   display: inline-block;
-  margin-left: 1em;
+  margin: auto 0 auto 1rem;
 `;
 
 const ProfileNickName = styled.p`
   margin: 3px 0px;
   font-weight: bold;
+  font-size: 1.3rem;
 `;
 
 const ArrowImg = styled.img`
-  height: 12px;
+  height: 18px;
+  margin-left: 0.3rem;
 `;
 
 const ProfileType = styled.p`
   margin: 3px 0px;
-  font-size: small;
+  font-size: 0.8rem;
 `;

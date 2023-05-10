@@ -1,7 +1,23 @@
 import styled from "styled-components";
 import DetailProfile from "../../images/storeImages/detailProfile.png";
+import { useState } from "react";
 
 const DetailContent = () => {
+  const [star, setStar] = useState(false);
+
+  const starStyle = {
+    color: star ? "yellow" : "black",
+  };
+
+  const handleClick = () => {
+    setStar(!star);
+    if (!star) {
+      alert("즐겨찾기로 등록하겠습니까?");
+    } else {
+      alert("즐겨찾기를 해제하겠습니까?");
+    }
+  };
+
   return (
     <>
       <DetailContentWrapper>
@@ -12,7 +28,9 @@ const DetailContent = () => {
           <DetailName>역삼당구장</DetailName>
           <DetailRecommend>4.2</DetailRecommend>
         </DetailNameWrapper>
-        <DetailFavorite>★</DetailFavorite>
+        <DetailFavorite onClick={handleClick} style={starStyle}>
+          {star ? "★" : "☆"}
+        </DetailFavorite>
       </DetailContentWrapper>
     </>
   );
@@ -56,4 +74,5 @@ const DetailFavorite = styled.p`
   position: absolute;
   top: 20%;
   right: 0;
+  cursor: pointer;
 `;
